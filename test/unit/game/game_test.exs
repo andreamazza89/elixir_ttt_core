@@ -14,6 +14,39 @@ defmodule GameTest do
 
   describe "game status" do
 
+    test "finds the winner if one exists" do
+      winner = %Player.Human{mark: :x}
+      loser = %Player.Human{mark: :o}
+      win_board = create_board([x: [1,2,3], o: [4,5]])
+      game = %Game{board: win_board, players: {loser, winner}}
+
+      assert Game.winner(game) === winner
+    end
+
+    test "does not find the winner if there is not one" do
+      player_1 = %Player.Human{mark: :x}
+      player_2 = %Player.Human{mark: :o}
+      win_board = create_board([x: [1,2], o: [4,5]])
+      game = %Game{board: win_board, players: {player_1, player_2}}
+
+      assert Game.winner(game) === nil
+    end
+
+    test "knows if a game is a draw" do
+      draw_board = create_board([x: [1,2,6,7,9,], o: [3,4,5,8]])
+      game = %Game{board: draw_board}
+
+      assert Game.draw?(game) === true
+    end
+
+    test "knows if a game is not a draw" do
+      draw_board = create_board([x: [1,6,7,9,], o: [3,4,5,8]])
+      game = %Game{board: draw_board}
+
+      assert Game.draw?(game) === false
+    end
+
+
     test "reports a draw" do
       draw_board = create_board([x: [1,2,6,7,9,], o: [3,4,5,8]])
       game = %Game{board: draw_board}
