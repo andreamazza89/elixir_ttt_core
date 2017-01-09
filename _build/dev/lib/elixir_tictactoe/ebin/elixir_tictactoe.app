@@ -1,0 +1,12 @@
+{application,elixir_tictactoe,
+             [{registered,[]},
+              {description,"elixir_tictactoe"},
+              {vsn,"0.3.0"},
+              {modules,['Elixir.Board','Elixir.Game','Elixir.Game.Runner',
+                        'Elixir.GameFactory','Elixir.PlayGame',
+                        'Elixir.Player','Elixir.Player.Human',
+                        'Elixir.Player.LinearCpu','Elixir.Player.MiniMax',
+                        'Elixir.Player.Player.Human',
+                        'Elixir.Player.Player.LinearCpu',
+                        'Elixir.Player.Player.MiniMax','Elixir.UI.Console']},
+              {applications,[kernel,stdlib,elixir,logger]}]}.
