@@ -4,9 +4,9 @@ defmodule GameTest do
 
   describe "default" do
 
-    test "game defaults to human v machine players" do
+    test "game defaults to human v human players" do
       game = %Game{}
-      {%Player.Human{}, %Player.LinearCpu{}}  = game.players
+      {%Player.Human{}, %Player.Human{}}  = game.players
     end
 
   end
