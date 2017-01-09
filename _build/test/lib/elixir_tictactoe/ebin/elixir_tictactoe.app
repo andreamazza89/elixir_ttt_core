@@ -1,6 +1,6 @@
 {application,elixir_tictactoe,
              [{registered,[]},
-              {description,"elixir_tictactoe"},
+              {description,"Core library to build a tictactoe app"},
               {vsn,"0.3.0"},
               {modules,['Elixir.Board','Elixir.Game','Elixir.GameFactory',
                         'Elixir.Player','Elixir.Player.Human',

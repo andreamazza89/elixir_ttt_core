@@ -11,7 +11,16 @@ defmodule ElixirRomanNumerals.Mixfile do
       start_permanent: Mix.env == :prod,
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: ["coveralls": :test, "coveralls.travis": :test]
+      package: package,
+      description: "Core library to build a tictactoe app"
+    ]
+  end
+
+  def package do
+    [
+      maintainers: ["Andrea Mazzarella"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/andreamazza89/elixir_ttt_core"}
     ]
   end
 
@@ -25,6 +34,7 @@ defmodule ElixirRomanNumerals.Mixfile do
   defp deps do
     [
       {:mix_test_watch, "~> 0.2", only: :dev},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 end
